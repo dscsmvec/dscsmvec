@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>DSC</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo+Black">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="assets/css/Table-With-Search-1.css">
+    <link rel="stylesheet" href="assets/css/Table-With-Search.css">
+    <link rel="stylesheet" href="assets/css/untitled-1.css">
+    <link rel="stylesheet" href="assets/css/untitled.css">
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+</head>
+
+<body>
+        <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white portfolio-navbar">
+                <div class="container"><a class="navbar-brand logo" href="/" style="color: #414149;font-weight: normal;font-size: 18px;"><img src="assets/img/dsc-01.png" style="width: 50px;margin-right: 10px;margin-bottom: 3px;">DSC SMVEC<br></a><button data-toggle="collapse" class="navbar-toggler"
+                        data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="/">Home</a></li>
+                            <li class="nav-item" role="presentation">
+                                <div class="nav-item dropdown" style="font-family: Lato, sans-serif;font-weight: bold;padding-top: 8px;padding-bottom: 8px;padding-right: 0px;"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color: rgb(0,0,0);">Events</a>
+                                    <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="/#events">Upcoming</a><a class="dropdown-item" role="presentation" href="events.html">All</a></div>
+                                </div>
+                            </li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="team.html">Team</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="/#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div style="padding: 20px;margin-top: 100px;">
+                    <div class="container" style="padding: 20px;">
+                        <div class="row">
+                            <div class="col-md-6 text-center d-flex justify-content-center"><img src="assets/img/flutter-logo.svg" style="width: 100px;"></div>
+                            <div class="col-md-6 d-flex flex-column" style="margin-top: 20px;padding: 30px;padding-top: 80px;">
+                                <h1 class="text-left d-sm-flex" style="width: 100%;font-family: 'Open Sans', sans-serif;font-weight: bold;font-size: 30px;">Flutter Interact</h1>
+                                <p class="text-left text-muted">Hello Folks, we're planning on host an Flutter Development session by DSC at the end of December kindly register yourself using the button below.&nbsp;Please register and make yourself gearup in flutter mobile development.</p><a href="https://docs.google.com/forms/d/e/1FAIpQLSes50waKgUum1FyUuRF4VYWFaKLYBDgatwtmKGhHT_USM609w/viewform?usp=sf_link" style="text-decoration: none;"><button class="btn btn-primary learn-btn btn-block" type="button">Register</button></a><a><button class="btn btn-primary learn-btn btn-block"
+                                    type="button" style="margin-top: 10px;background-color: rgb(9,139,223);" id="report_option">Report</button></a></div>
+
+
+
+                                    <div id="report_me" class="modal fade" tabindex="-1" role="dialog">
+                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Report</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form id="my-form" method="POST" action="https://formspree.io/xbjlvnzr" enctype="multipart/form-data">
+                                                            <div class="form-group">
+                                                                <input type="text" name="typic" value="flutter" class="form-control border-white" readonly/>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="text-muted">Email Address *</label>
+                                                                <input class="form-control" type="email" name="email" placeholder="Email Address" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="text-muted">Message *</label>
+                                                                <textarea class="form-control" placeholder="Describe your problem in detail here" maxlength="250" name="message"></textarea>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <button type="submit" id="my-form-button" class="btn btn-primary border rounded">Submit</button>
+                                                                <button type="button" class="btn btn-secondary border rounded" data-dismiss="modal">Cancel</button>                                           
+                                                            </div>
+                                                        </form>
+                                                    </div>                                        
+                                                </div>
+                                            </div>
+                                    </div>
+            
+                                    <div style="display: none;"  id="report_status" class="alert alert-dark" role="alert">
+                                            Reported Successfully!
+                                    </div>
+                        </div>
+                    </div>
+            </div>    
+    <div id="about" style="padding: 20px;margin-top: 100px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center d-flex justify-content-center align-items-center"><img src="assets/img/iconfinder_App_Development_1016076.svg" height="350px" style="width: 200px;padding-bottom: 30px;"></div>
+                <div class="col-md-6 d-flex flex-column text-center" style="padding-top: 80px;">
+                    <h1 class="text-center" style="font-size: 30px;font-family: 'Open Sans', sans-serif;font-weight: bold;">Why Flutter?</h1>
+                    <p class="text-center text-muted"><br>Flutter is an open-source UI software development kit created by Google. It is used to develop applications for Android, iOS, Windows, Mac, Linux, Google Fuchsia and the web.<br></p>
+                    <a href="https://www.thedroidsonroids.com/blog/flutter-in-mobile-app-development-pros-and-cons-for-app-owners"><button class="btn btn-info">Learn More</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="article-list" style="padding: 20px;">
+        <div class="container text-center">
+            <div class="intro">
+                <h2 class="text-center" style="font-family: 'Open Sans', sans-serif;font-size: 30px;font-weight: bold;">Requirements<br></h2>
+                <p class="text-center text-muted" style="font-size: 13px;">You need to follow the below steps in order to work at ease <br>at the session, by configuring your console for flutter development. Alternative you can use the dart pad.</p>
+            </div>
+            <div class="badge badge-secondary p-1"><a style="color:white;text-decoration: none;" href="https://dartpad.dartlang.org/">Dart Pad</a></div>
+            <hr style="max-width: 100%;width: 50%;">
+            <div class="row articles" style="padding: 20px;">
+                <div class="col-sm-6 col-md-4 text-center item"><a href="https://flutter.dev/docs/get-started/install/windows"><img class="img-fluid" src="assets/img/iconfinder_file-zip-alt2_285629.svg" style="width: 80px;padding: 10px;"></a>
+                    <h3 class="name" style="font-family: 'Open Sans', sans-serif;font-weight: bold;font-size: 25px;">Download Flutter SDK</h3>
+                    <p class="text-muted description" style="font-size: 14px;">Download the following installation bundle to get the latest stable release of the Flutter SDK<br></p><a class="action" href="https://storage.googleapis.com/flutter_infra/releases/stable/windows/flutter_windows_v1.9.1+hotfix.6-stable.zip"><i class="fa fa-download"></i></a></div>
+                <div
+                    class="col-sm-6 col-md-4 text-center item"><a href="https://flutter.dev/docs/get-started/install/windows"><img class="img-fluid" src="assets/img/iconfinder_file-link_299081.svg" style="width: 80px;padding: 10px;"></a>
+                    <h3 class="name" style="font-family: 'Open Sans', sans-serif;font-weight: bold;font-size: 25px;">Extracting SDK</h3>
+                    <p class="description" style="font-size: 14px;">Extract the zip file and place the contained&nbsp;flutter&nbsp;in the desired installation location for the Flutter SDK.<br></p>
+            </div>
+            <div class="col-sm-6 col-md-4 text-center item"><a href="https://flutter.dev/docs/get-started/install/windows"><img class="img-fluid" src="assets/img/iconfinder_file-exe_285685.svg" style="width: 80px;padding: 10px;"></a>
+                <h3 class="name" style="font-family: 'Open Sans', sans-serif;font-weight: bold;font-size: 25px;">Update your path</h3>
+                <p class="description" style="font-size: 14px;">Add an environment variable for path 'flutter/bin'.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer class="page-footer" style="padding-top: 20px;">
+        <div class="container">
+            <div class="social-icons"><a class="border rounded-circle border-white" href="https://facebook.com/dscsmvec" style="color: rgb(0,0,0);background-color: rgb(255,255,255);"><i class="icon ion-social-facebook"></i></a><a class="border rounded-circle border-white" href="" style="color: rgb(0,0,0);background-color: rgb(255,255,255);"><i class="fab fa-instagram"></i></a>
+                <a
+                    class="border rounded-circle border-white" href="" style="color: rgb(0,0,0);background-color: rgb(255,255,255);"><i class="icon ion-social-twitter"></i></a>
+                    <h5 style="font-family: 'Open Sans', sans-serif;font-weight: bold;margin-bottom: 0px;font-size: 16px;padding-top: 15px;">Developer Student Clubs</h5>
+                    <p class="text-muted mt-1 font-weight-bold" style="margin-bottom: 10px;font-size: 12px;">Sri Manakula Vinayagar Engineering College</p>
+            </div>
+            <div class="links">
+                <hr style="max-width: 100%;width: 50%;">
+                <p class="text-center text-muted d-flex justify-content-center align-items-end" style="font-size: 12px;margin-bottom: 6px;">Made with &nbsp;<i class="fa fa-heart" style="padding-bottom: 3px;color: #f0174b;"></i>&nbsp; in Puducherry</p>                
+                <p class="text-center text-muted d-flex justify-content-center align-items-end" style="font-size: 14px;">Copyright&nbsp;<i class="fa fa-copyright" style="padding-bottom: 3px;"></i>&nbsp; 2019. All rights are reserved</p>
+                
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/firebase-config.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/report.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme.js"></script>
+</body>
+
+</html>

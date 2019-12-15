@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Projects - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo+Black">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="assets/css/Table-With-Search-1.css">
+    <link rel="stylesheet" href="assets/css/Table-With-Search.css">
+    <link rel="stylesheet" href="assets/css/untitled-1.css">
+    <link rel="stylesheet" href="assets/css/untitled.css">
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white portfolio-navbar">
+        <div class="container"><a class="navbar-brand logo" href="/" style="color: #191921;font-weight: normal;font-size: 18px;"><img src="assets/img/dsc-01.png" style="width: 50px;margin-right: 10px;margin-bottom: 3px;">DSC SMVEC<br></a><button data-toggle="collapse" class="navbar-toggler"
+                data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item" role="presentation">
+                        <div class="nav-item dropdown" style="font-family: Lato, sans-serif;font-weight: bold;padding-top: 8px;padding-bottom: 8px;padding-right: 0px;"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="color: rgb(0,0,0);">Events</a>
+                            <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="/#events">Upcoming</a><a class="dropdown-item" role="presentation" href="events.html">All</a></div>
+                        </div>
+                    </li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="team.html">Team</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page projets-page">
+        <section class="portfolio-block project-no-images">
+            <div class="container">
+                <div class="heading">
+                    <h2 style="font-family: 'Open Sans', sans-serif;font-weight: bold;">EVENTS</h2>
+                    <p class="text-muted">different types of events and workshops are hosted and make the students to practise more precisely.</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card-no-image"><img src="assets/img/iconfinder-icon%20(6).svg" style="width: 80px;padding: 10px;">
+                            <h3 style="font-family: 'Open Sans', sans-serif;font-weight: bold;margin-bottom: 15px;">Make a android app</h3>
+                            <h4 style="font-size: 14px;margin-bottom: 15px;">A brief introduction to android app development via android studio and making of a simple app.<br></h4><a class="btn btn-outline-dark disabled btn-sm" role="button" target="_blank">Coming Soon</a>
+                            <div class="tags">
+                                <p class="text-lowercase text-muted" style="font-size: 13px;"><i class="fa fa-circle" style="color: rgb(255,215,3);"></i>&nbsp; soon<br></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card-no-image event-card"><img src="assets/img/iconfinder-icon%20(5).svg" style="width: 80px;padding: 10px;">
+                            <h3 style="font-family: 'Open Sans', sans-serif;font-weight: bold;margin-bottom: 15px;">Explore ML Session</h3>
+                            <h4 style="font-size: 14px;margin-bottom: 15px;">Learn Google AI and Explore Machine Learning during the session.<br></h4><a class="btn btn-outline-primary btn-sm" role="button" href="exploreml.html">See More</a>
+                            <div class="tags">
+                                <p class="text-lowercase text-muted" style="font-size: 13px;"><i class="fa fa-circle" style="color: #48e200;"></i>&nbsp;active<br></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card-no-image"><img src="assets/img/flutter-logo.svg" style="width: 80px;padding: 10px;">
+                            <h3 style="font-family: 'Open Sans', sans-serif;font-weight: bold;margin-bottom: 15px;">Flutter Interact</h3>
+                            <h4 style="font-size: 14px;margin-bottom: 15px;">A basic Introduction on Flutter Development and hands-on practise.<br></h4><a class="btn btn-outline-primary btn-sm" role="button" href="flutter.html">See More</a>
+                            <div class="tags">
+                                <p class="text-lowercase text-muted" style="font-size: 13px;"><i class="fa fa-circle" style="color: rgb(72,226,0);"></i>&nbsp;active<br></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="project-card-no-image"><img src="assets/img/super_cloud.png" style="width: 80px;">
+                            <h3 style="font-family: 'Open Sans', sans-serif;font-weight: bold;margin-bottom: 15px;">GCP Crash Course</h3>
+                            <h4 style="font-size: 14px;margin-bottom: 15px;">An efficient introduction to the Google Cloud Platform, including its general structure.<br></h4><a class="btn btn-outline-primary btn-sm" role="button" href="gcp.html">See More</a>
+                            <div class="tags">
+                                <p class="text-lowercase text-muted" style="font-size: 13px;"><i class="fa fa-circle" style="color: rgb(223,13,0);"></i>&nbsp; offline<br></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer" style="padding-top: 20px;">
+        <div class="container">
+            <div class="social-icons"><a class="border rounded-circle border-white" href="https://facebook.com/dscsmvec" style="color: rgb(0,0,0);background-color: rgb(255,255,255);"><i class="icon ion-social-facebook"></i></a><a class="border rounded-circle border-white" href="" style="color: rgb(0,0,0);background-color: rgb(255,255,255);"><i class="fab fa-instagram"></i></a>
+                <a
+                    class="border rounded-circle border-white" href="" style="color: rgb(0,0,0);background-color: rgb(255,255,255);"><i class="icon ion-social-twitter"></i></a>
+                    <h5 style="font-family: 'Open Sans', sans-serif;font-weight: bold;margin-bottom: 0px;font-size: 16px;padding-top: 15px;">Developer Student Clubs</h5>
+                    <p class="text-muted mt-1 font-weight-bold" style="margin-bottom: 10px;font-size: 12px;">Sri Manakula Vinayagar Engineering College</p>
+            </div>
+            <div class="links">
+                <hr style="max-width: 100%;width: 50%;">
+                <p class="text-center text-muted d-flex justify-content-center align-items-end" style="font-size: 12px;margin-bottom: 6px;">Made with &nbsp;<i class="fa fa-heart" style="padding-bottom: 3px;color: #f0174b;"></i>&nbsp; in Puducherry</p>                
+                <p class="text-center text-muted d-flex justify-content-center align-items-end" style="font-size: 14px;">Copyright&nbsp;<i class="fa fa-copyright" style="padding-bottom: 3px;"></i>&nbsp; 2019. All rights are reserved</p>
+                
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/firebase-config.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme.js"></script>
+</body>
+
+</html>
