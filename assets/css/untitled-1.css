@@ -1,0 +1,43 @@
+iframe {
+  max-width: 100%;
+}
+
+lottie-player {
+  max-height: 100%;
+}
+
+.btn.btn-primary.learn-btn {
+  border-radius: 5px;
+  /*background: #;*/
+}
+
+.card-group > .card {
+  background: white;
+  transition: 0.9s;
+}
+
+.card-group > .card:hover {
+  background: #0ea0ff;
+  color: white;
+  /*cursor: pointer;*/
+}
+
+.card-group > .card: hover {
+  background: blue;
+}
+
+.btn.btn-primary.event-btn {
+  border-radius: 5px;
+  transition: 0.7s;
+  cursor: pointer;
+}
+
+.btn.btn-primary.event-btn:active {
+  transform: scale(0.7);
+}
+
+.project-card-no-image.event-card:hover {
+  /*background: rgba(14,160,255,0.02);*/
+  /*cursor: pointer;*/
+}
+

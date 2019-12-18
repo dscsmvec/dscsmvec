@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>DSC</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo+Black">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="../assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="../assets/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="../assets/css/Table-With-Search-1.css">
+    <link rel="stylesheet" href="../assets/css/Table-With-Search.css">
+    <link rel="stylesheet" href="../assets/css/untitled-1.css">
+    <link rel="stylesheet" href="../assets/css/untitled.css">
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+</head>
+
+<body>
+    <div id="core_login_portal" class="login-clean">
+        <form id="core_login_form" method="post" style="padding: 40px;">
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><img src="../assets/img/dsc-01.png" style="width: 150px;"></div>
+            <div class="form-group"><input class="form-control" type="text" id="team_code" required="" placeholder="Team Code"></div>
+            <div class="form-group"><input class="form-control" type="password" id="team_password" name="password" placeholder="Password"></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" id="core_login_request" type="submit" style="background-color: #2784fb;">Log In</button></div><a class="forgot" href="/recuirt/index.html">Return to Home</a></form>
+    </div>
+    <div id="entries_block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 d-flex" id="entries_sub_block" style="padding: 30px;"></div>
+                <div class="col">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="detail_core_info">
+                        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Applicant Name</td>
+                                                    <td id="core_detail_name">Hemaprakash Raghu</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Status</td>
+                                                    <td><span class="badge badge-pill badge-danger" id="core_detail_status" style="padding: 10px;">pending</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Year</td>
+                                                    <td id="core_detail_year">3rd Year</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Section</td>
+                                                    <td id="core_detail_section">C</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Register Num</td>
+                                                    <td id="core_detail_regnum">17TD0255</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Department</td>
+                                                    <td id="core_detail_department">CSE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Email</td>
+                                                    <td id="core_detail_email">prakashjaw05@gmail.com</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Mobile</td>
+                                                    <td>+91 7092043702</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Interest</td>
+                                                    <td id="core_detail_interest">Web Development</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Need for</td>
+                                                    <td id="core_detail_need">I wanna learn more and explore new things</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Confident</td>
+                                                    <td id="core_detail_confident" href="#">C/C++,Python,Java,HTML/CSS,Javascript,PHP,Adobe Illustrator,Adobe Photoshop,Adobe After Effects</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Facebook</td>
+                                                    <td><a id="core_detail_facebook">https://www.facebook.com/prakashjaw<br></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Github</td>
+                                                    <td><a id="core_detail_github" href="#">https://www.facebook.com/prakashjaw<br></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Behance</td>
+                                                    <td><a id="core_detail_behance" href="#">https://www.facebook.com/prakashjaw<br></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Linked In</td>
+                                                    <td><a id="core_detail_linkedin" href="#">https://www.facebook.com/prakashjaw<br></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Instagram</td>
+                                                    <td><a id="core_detail_instagram" href="#">https://www.facebook.com/prakashjaw<br></a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="modal-footer"><button class="btn btn-light border rounded" type="button" data-dismiss="modal">Close</button><button class="btn btn-danger border rounded" id="decline_core" type="button">Decline</button><button class="btn btn-primary border rounded"
+                                        id="accept_core" type="button">Accept</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col"><a id="core_signout" href="#">signOut</a></div>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bs-init.js"></script>
+    <script src="../assets/js/firebase-config.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/theme.js"></script>
+</body>
+
+</html>

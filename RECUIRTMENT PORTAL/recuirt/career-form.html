@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>DSC</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo+Black">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="../assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="../assets/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="../assets/css/Table-With-Search-1.css">
+    <link rel="stylesheet" href="../assets/css/Table-With-Search.css">
+    <link rel="stylesheet" href="../assets/css/untitled-1.css">
+    <link rel="stylesheet" href="../assets/css/untitled.css">
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+</head>
+
+<body>
+    <div class="text-center core-from-block" id="core_entry_portal_block" style="background-color: #ffffff;max-width: 100%;max-height: 100%;height: 500px;padding: 20px;margin-top: 90px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center d-flex flex-column justify-content-center align-items-center"><a href="/recuirt/index.html"><img src="../assets/img/dsc-01.png" style="width: 100px;"></a>
+                    <h1 class="text-center" style="font-family: 'Open Sans', sans-serif;font-weight: bold;">Welcome to&nbsp;</h1>
+                    <h1 class="text-center" style="font-family: 'Open Sans', sans-serif;font-weight: bold;font-size: 35px;">Developer Student Clubs</h1>
+                    <p class="text-center text-muted" style="font-size: 16px;">Sri Manakula Vinayagar Engineering College</p>
+                    <h3 class="text-center" style="font-family: 'Archivo Black', sans-serif;font-weight: bold;">GUEST ENTRY</h3>
+                    <form class="d-sm-flex flex-column align-items-sm-center" id="core_guest_entry_submit"><input class="form-control form-control" type="text" id="guest_entry_code" style="max-width: 200px;margin-top: 5px;" required="" placeholder="Enter Code" name="entry_code"><a style="padding: 5px;font-size: 14px;opacity: 0.89;" href="../team.html">don't have code? Reach Team</a>
+                        <button
+                            class="btn btn-primary learn-btn" id="guest_entry_request" type="submit" style="margin-top: 15px;">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="core_entry_portal">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12" style="padding-top: 50px;"><a href="career.html"><img src="../assets/img/dsc-01.png" style="width: 150px;"></a>
+                    <h1 style="font-family: 'Open Sans', sans-serif;font-weight: bold;font-size: 30px;">Developer Student Clubs</h1>
+                    <p class="text-center text-muted" style="font-size: 15px;margin-bottom: 0px;">Sri Manakula Vinayagar Engineering College</p>
+                    <p class="text-center text-muted" style="font-size: 13px;opacity: 0.77;padding: 5px;">powered by Google Developers</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center d-sm-flex flex-column justify-content-sm-center align-items-sm-center" style="padding: 20px;">
+                    <h1 class="text-center" style="font-size: 30px;font-weight: bold;font-family: 'Open Sans', sans-serif;">Core Team Recuirtment 2020</h1>
+                    <p class="text-center" id="guest_id" style="font-family: 'Open Sans', sans-serif;font-weight: normal;font-size: 13px;"></p><img id="success_core_apply_img" src="../assets/img/iconfinder-icon%20(8).svg" style="width: 70px;">
+                    <h1 id="success_core_apply" style="font-size: 25px;font-family: 'Open Sans', sans-serif;font-weight: bold;padding: 10px;">Applied Successfully</h1><a href="#" style="padding: 10px;">For any changes report here</a></div>
+                <div class="col-md-12 text-center d-flex justify-content-center" style="padding-right: 5px;padding-left: 5px;padding-top: 30px;">
+                    <form class="text-left" id="core_form" style="max-width: 70%;">
+                        <div class="form-group"><label style="font-weight: bold;">Email Address *</label><input class="form-control" type="email" id="core_email" placeholder="jaw@example.com" required="" inputmode="email"></div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group"><label style="font-weight: bold;">First Name *</label><input class="form-control" type="email" id="core_firstname" placeholder="Johnson" inputmode="tel" required=""></div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group"><label style="font-weight: bold;">Last Name *</label><input class="form-control" type="email" id="core_lastname" placeholder="Carl" required=""></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col"><label style="font-weight: bold;">Register Number *</label><input class="form-control" type="text" id="core_registernumber" placeholder="17TD0327" required="" maxlength="10"></div>
+                                <div class="col"><label style="font-weight: bold;">Section *</label><select class="custom-select" id="core_section" name="section" required=""><option value="null" selected="">Choose Section</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="Others">Others</option></select></div>
+                            </div>
+                        </div>
+                        <div class="form-group"><label style="font-weight: bold;">Mobile Number *</label><i class="fa fa-question-circle" data-toggle="tooltip" data-bs-tooltip="" data-placement="right" style="padding: 10px;" title="give with country code +91"></i><input class="form-control"
+                                type="tel" id="core_mobile" required="" placeholder="+91 88 0327 0222" maxlength="14" minlength="10"></div>
+                        <div class="form-group"></div>
+                        <div class="form-group"><label style="font-weight: bold;">Year of study *</label><i class="fa fa-question-circle" data-toggle="tooltip" data-bs-tooltip="" data-placement="right" style="padding: 10px;" title="not for BTech final years"></i>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-1" name="year" value="1st Year"><label class="custom-control-label" for="formCheck-1">1st Year</label></div>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-2" name="year" value="2nd Year"><label class="custom-control-label" for="formCheck-2">2nd Year</label></div>
+                                    <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-3" name="year" checked="" value="3rd Year"><label class="custom-control-label" for="formCheck-3">3rd Year</label></div>
+                                    <div class="custom-control custom-control-inline custom-radio"
+                                        title="not for BTech final years"><input class="custom-control-input" type="radio" id="formCheck4" name="year" value="4th Year"><label class="custom-control-label" for="formCheck4">4th Year</label></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group"><label style="font-weight: bold;">Department *</label>
+                            <select
+                                class="custom-select" id="department" placeholder="" name="department" required="">
+                                <option value="null" selected disabled>Choose Department</option>
+                                <option value="CSE">CSE</option>
+                                <option value="IT">IT</option>
+                                <option value="MECH">MECH</option>
+                                <option value="CIVIL">CIVIL</option>
+                                <option value="ECE">ECE</option>
+                                <option value="EEE">EEE</option>
+                                <option value="ICE">ICE</option>
+                                <option value="Mechatronics">Mechatronics</option>
+                                <option value="EIE">EIE</option>
+                                <option value="CSBS">CSBS</option>
+                                <option value="Bio Info">Bio Info</option>
+                                <option value="Bio Tech">Bio Tech</option>
+                                <option value="MCA">MCA</option>
+                                <option value="ICT">ICT</option>
+                            </select>
+                        </div>
+                        <div class="form-group"><label style="font-weight: bold;">Interested Field *</label><i class="fa fa-info-circle" data-toggle="tooltip" data-bs-tooltip="" data-placement="right" style="padding: 10px;" title="you can find the department related information at recuirtment home page"></i>
+                            <select
+                                class="custom-select" id="core_interest" placeholder="LinkedIn Profile" name="interest" required="">
+                                <option value="null" disabled selected>Choose Interested Field</option>
+                                <option value="Android/Flutter Development">Android/Flutter Development</option>
+                                <option value="Web Development">Web Development</option>
+                                <option value="Google Cloud Platform">Google Cloud Platform</option>
+                                <option value="Graphic Designing">Graphic Designing</option>
+                                <option value="AR/VR">AR/VR</option>
+                                <option value="Event Coverage">Event Coverage</option>
+                                <option value="Content Writing">Content Writing</option>
+                                <option value="Marketing and Coporate Relations">Marketing and Coporate Relations</option>
+                                </select>
+                        </div>
+                        <div class="form-group"><label style="font-weight: bold;">&nbsp;You are confident in*</label><i class="fa fa-info-circle" data-toggle="tooltip" data-bs-tooltip="" data-placement="right" style="padding: 10px;" title="select multiple if you need"></i>
+                            <div
+                                class="form-row">
+                                <div class="col">
+                                    <div class="custom-control custom-checkbox"><input class="custom-control-input" type="checkbox" id="c" value="C/C++"><label class="custom-control-label" for="c">C/C++</label></div>
+                                    <div class="custom-control custom-checkbox"><input class="custom-control-input" type="checkbox" id="python" value="Python"><label class="custom-control-label" for="python">Python</label></div>
+                                    <div class="custom-control custom-checkbox"><input class="custom-control-input" type="checkbox" id="java" value="Java"><label class="custom-control-label" for="java">Java</label></div>
+                                    <div class="custom-control custom-checkbox"><input class="custom-control-input" type="checkbox" id="r" value="R"><label class="custom-control-label" for="r">R</label></div>
+                                    <div class="custom-control custom-checkbox"><input class="custom-control-input" type="checkbox" id="html" value="HTML/CSS"><label class="custom-control-label" for="html">HTML/CSS</label></div>
+                                    <div class="custom-control custom-checkbox"><input class="custom-control-input" type="checkbox" id="js" value="Javascript" for="js"><label class="custom-control-label" for="js">Javascript</label></div>
+                                    <div class="custom-control custom-checkbox"><input class="custom-control-input" type="checkbox" id="php" value="PHP"><label class="custom-control-label" for="php">PHP</label></div>
+                                    <div class="custom-control custom-checkbox"><input class="custom-control-input" type="checkbox" id="other" value="other"><label class="custom-control-label" for="other">Other</label></div><input class="form-control" type="text" id="other_lang" placeholder="separate by comma"></div>
+                                <div
+                                    class="col">
+                                    <div class="custom-control custom-checkbox"><input class="custom-control-input" type="checkbox" id="illustrator" value="Adobe Illustrator"><label class="custom-control-label" for="illustrator">Adobe Illustrator</label></div>
+                                    <div class="custom-control custom-checkbox"><input class="custom-control-input" type="checkbox" id="photoshop" value="Adobe Photoshop"><label class="custom-control-label" for="photoshop">Adobe Photoshop</label></div>
+                                    <div class="custom-control custom-checkbox"><input class="custom-control-input" type="checkbox" id="ae" value="Adobe After Effects"><label class="custom-control-label" value="Video Editing" for="ae">Adobe After Effects</label></div>
+                                    <div class="custom-control custom-checkbox"><input class="custom-control-input" type="checkbox" id="video_editing"><label class="custom-control-label" for="video_editing">Video Editing</label></div>
+                        </div>
+                </div>
+            </div>
+            <div class="form-group"><label style="font-weight: bold;">Social accounts</label><i class="fa fa-info-circle" data-toggle="tooltip" data-bs-tooltip="" data-placement="right" style="padding: 10px;" title="full profile URL"></i><input class="form-control" type="url"
+                    id="core_linkedin" placeholder="LinkedIn Profile" style="margin-top: 10px;"><input class="form-control" type="url" id="core_instagram" placeholder="Instagram Profile" style="margin-top: 10px;"><input class="form-control" type="url" id="core_facebook"
+                    placeholder="Facebook Profile" style="margin-top: 10px;" required=""><input class="form-control" type="url" id="core_github" placeholder="Github Profile" style="margin-top: 10px;"><input class="form-control" type="url" id="core_behance"
+                    placeholder="Behance Profile" style="margin-top: 10px;"></div>
+            <div class="form-group"><label style="font-weight: bold;">Why should we select you in the DSC Core Team ?</label><textarea class="form-control" id="core_need" placeholder="Describe here" rows="4" required=""></textarea></div>
+            <div class="form-group">
+                <div class="custom-control custom-radio"><input class="custom-control-input" type="radio" id="agree" for="formCheck-4" value="agree" required=""><label class="custom-control-label text-muted" for="agree" style="font-size: 13px;padding: 3px;">By applying this core team recuirtment 2020 you accept our&nbsp;<a id="openPrivacyModal" href="#">Terms and Policy</a>&nbsp;.</label></div>
+            </div>
+            <div class="form-group d-flex justify-content-end align-items-center"><a class="btn btn-primary border-white learn-btn" role="button" id="core_cancel" style="background-color: #cccccc;color: rgb(255,255,255);margin-right: 15px;" href="/">Cancel</a><a class="btn btn-primary learn-btn" role="button"
+                    id="core_apply" style="background-color: #0ea0ff;color: rgb(255,255,255);margin-right: 15px;">Apply</a></div>
+            </form>
+        </div>
+        <div class="col">
+            <div class="modal fade" role="dialog" tabindex="-1" id="privacy_modal">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Terms and Policy</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                        <div class="modal-body">
+                            <h1 style="font-size: 30px;font-family: 'Open Sans', sans-serif;font-weight: bold;">Core Team Recuirtment</h1>
+                            <p class="text-muted">Developer Student Club is a program powered by Google Developers that identifies and supports university students who are passionate about growing developer communities that foster learning, sharing, and collaboration. The
+                                club is open to any student, ranging from novice developers, who are just starting, to advanced developers, who want to enhance their skill set. The club is intended as a space for students to collaborate and try out new
+                                ideas for existing problems using mobile and web technologies.<br><br>&nbsp; &nbsp;-Are you a person who believes in self-learning?<br>&nbsp; &nbsp;-Are you an expert in any technology and wanted to give back t o the community?<br>&nbsp;
+                                &nbsp;-Are you the one who tries to create an impact?<br><br>Then you're the one we are searching for... Join DSC to upskill yourself and others...<br></p>
+                            <h1 style="font-size: 30px;font-family: 'Open Sans', sans-serif;font-weight: bold;">Privacy</h1>
+                            <p class="text-muted">1) All the data collected during the recuirtment process are secured and no data is breached out for any reason.<br>2) All the data collected from the user is stored securely in Google Firebase Cloud.<br>3) Personal Information
+                                like mobile number, email address and user name are collected as per recuirtment process requirement.<br>4) Your data related to your skills and personality will not be shared for any reason.<br>5) Every data insertion
+                                to the cloud are done only with authentication.</p>
+                            <h1 style="font-size: 30px;font-family: 'Open Sans', sans-serif;font-weight: bold;">Aware Of</h1>
+                            <p class="text-muted">1) Your entry to the recuirtment form is done with a guest code of 8 digit number provided by your respective DSC team.<br>2) Guest code helps you to get into the form filling area.<br>3) Your are anonymously authenticated
+                                once and your given a unique user id from server.<br>4) All the data you enter get stored with reference to your user id.<br>5) For any queries or updation about your data please do use your user id for reference.<br>6)
+                                A user can apply only once so do it carefully.<br>7) Note that if you try to breach or do something inappropriate your guest id will be blocked and you cannot apply any more.</p>
+                        </div>
+                        <div class="modal-footer"><button class="btn btn-light border rounded" type="button" data-dismiss="modal" style="background-color: rgba(204,204,204,0.61);">Close</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bs-init.js"></script>
+    <!-- <script src="assets/js/firebase-config.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/theme.js"></script>
+    
+</body>
+
+<script>
+      var firebaseConfig = {
+    apiKey: "AIzaSyAlzwW1xctmeIYndKKj8JYWwBRrdWJnBR4",
+    authDomain: "smvecdsc.firebaseapp.com",
+    databaseURL: "https://smvecdsc.firebaseio.com",
+    projectId: "smvecdsc",
+    storageBucket: "smvecdsc.appspot.com",
+    messagingSenderId: "430236691127",
+    appId: "1:430236691127:web:4cdaffb5d641dae25b7b32"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+     $('#core_guest_entry_submit').submit(function(e){
+      e.preventDefault();
+    if($('#guest_entry_code').val() != "") {
+       
+            var db = firebase.database().ref("station").child("entry_code");
+            db.on("value", (snapshot) => {
+               if($('#guest_entry_code').val() === snapshot.val()) {
+                   $(".core-from-block").css("display","none");
+                   $('#core_entry_portal').css('display','block');  
+                   $('#success_core_apply').css('display','none');$('#success_core_apply_img').css('display','none');                                         
+               }else{
+                   alert('invalid code, try again!');
+               }
+            });
+            var checkDb = firebase.database().ref("station").child("entries");
+            var userIdPush = checkDb.push().getKey();
+            sessionStorage.setItem('key_guest_id',userIdPush);
+            $('#guest_id').html('Guest Id: '+userIdPush);
+        
+    }else{
+        alert('code is empty');
+    }
+  });
+
+  $('#core_apply').click(()=>{
+        
+        var coreEmail =  $('#core_email').val();
+         var coreSection = $('select[name="section"]').val();
+         
+        var firstName = $('#core_firstname').val();
+        var lastName  = $('#core_lastname').val();
+        var coreName = firstName + ' ' + lastName;
+         
+        var coreRegisterNumber = $('#core_registernumber').val();
+        var coreMobile = $('#core_mobile').val();
+        var coreDepartment = $('select[name="department"]').val();
+        var coreYear = $('input[name=year]:checked').val();
+        var coreInterest = $('select[name="interest"]').val();
+        
+        var coreConfident = '';
+        if($('#c').is(':checked')){
+            coreConfident += $('#c').val()+',';
+        }
+        if($('#python').is(':checked')){
+            coreConfident += $('#python').val()+',';
+        }
+         if($('#java').is(':checked')){
+            coreConfident += $('#java').val()+',';
+        }
+         if($('#r').is(':checked')){
+            coreConfident += $('#r').val()+',';
+        }
+         if($('#html').is(':checked')){
+            coreConfident += $('#html').val()+',';
+        }
+         if($('#js').is(':checked')){
+            coreConfident += $('#js').val()+',';
+        }
+         if($('#php').is(':checked')){
+            coreConfident += $('#php').val()+',';
+        }
+         if($('#other').is(':checked')){
+            coreConfident += $('#other_lang').val()+',';
+        }
+          if($('#illustrator').is(':checked')){
+            coreConfident += $('#illustrator').val()+',';
+        }
+         if($('#photoshop').is(':checked')){
+            coreConfident += $('#photoshop').val()+',';
+        }
+         if($('#ae').is(':checked')){
+            coreConfident += $('#ae').val()+',';
+        }
+          if($('#video_editing').is(':checked')){
+            coreConfident += $('#video_editing').val()+',';
+        }
+        
+         
+         
+        var coreInstagram = $('#core_instagram').val();
+        var coreLinkedIn = $('#core_linkedin').val();
+        var coreFacebook = $('#core_facebook').val();
+        var coreGithub = $('#core_github').val();
+        var coreBehance = $('#core_behance').val();
+        
+        var coreNeed = $('#core_need').val();
+
+        var today = new Date().getDate();
+         
+         if(coreEmail != "" && firstName != "" && lastName != "" && coreRegisterNumber != "" && coreMobile != "" && coreDepartment != "Choose Department" && coreYear != null && coreInterest != "Choose Interested Field" && coreFacebook != "" && coreNeed != "" && coreSection != "Choose Section"){
+             
+             if(isEmail(coreEmail)){
+                 if($('#agree').is(':checked')){
+                  
+                 var userId = sessionStorage.getItem('key_guest_id');
+                 var ref = firebase.database().ref("station");
+                 ref.child("entries").child(userId).set({
+                     guestid: userId,
+                     email: coreEmail,
+                     name: coreName,
+                     regnum: coreRegisterNumber,
+                     mobile: coreMobile,
+                     department: coreDepartment,
+                     year: coreYear,
+                     interest: coreInterest,
+                     confident: coreConfident,
+                     linkedin: coreLinkedIn,
+                     instagram: coreInstagram,
+                     facebook: coreFacebook,
+                     github: coreGithub,
+                     behance: coreBehance,
+                     need: coreNeed,
+                     status: 'pending',
+                     section: coreSection,
+                     created_on: today
+                 }, function(err){
+                     if(err){
+                         alert('something went wrong! try again!');
+                     }else{
+                         $('#core_form').css('display','none');
+                        $('#success_core_apply').css('display','block');$('#success_core_apply_img').css('display','block');                        
+                     }
+                 });
+
+                 }else{
+                     alert('accept the terms');
+                 }
+         }else{
+             alert('invalid email');
+         }
+         }else{
+             alert('required fields are empty!');
+         }
+                
+     });
+     
+  function isEmail(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
+
+$('#core_cancel').click(function(){
+    window.location.replace("/");
+    sessionStorage.setItem('key_guest_id','');
+});
+</script>
+</html>
