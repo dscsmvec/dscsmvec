@@ -5,10 +5,10 @@ $('#openPrivacyModal').click(function(){
    $('#privacy_modal').modal('show');
 });
 $('#login_touch').click(() =>{
-   window.location.replace("core-login.html"); 
+   window.location.replace("/join/core-login.html"); 
 });
 $('#form_touch').click(function(){
-    window.location.replace("career-form.html");
+    window.location.replace("/join/career-form.html");
 });
 
 $('.cancel-btn').click(function(){
