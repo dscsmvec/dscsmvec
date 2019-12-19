@@ -23,11 +23,14 @@
     <link rel="stylesheet" href="../assets/css/Table-With-Search.css">
     <link rel="stylesheet" href="../assets/css/untitled-1.css">
     <link rel="stylesheet" href="../assets/css/untitled.css">
-<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>    
 </head>
-
+<style>
+    #pre_loader{
+        display: none;
+    }
+</style>
 <body>
     <div class="text-center core-from-block" id="core_entry_portal_block" style="background-color: #ffffff;max-width: 100%;max-height: 100%;height: 500px;padding: 20px;margin-top: 90px;">
         <div class="container">
@@ -41,6 +44,9 @@
                         <button
                             class="btn btn-primary learn-btn" id="guest_entry_request" type="submit" style="margin-top: 15px;">Submit</button>
                     </form>
+                    <div id="pre_loader" class="spinner-border text-primary" role="status">
+                            <span class="sr-only">Loading...</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -48,7 +54,7 @@
     <div id="core_entry_portal">
         <div class="container">
             <div class="row text-center">
-                <div class="col-md-12" style="padding-top: 50px;"><a href="/join/index.html"><img src="../assets/img/dsc-01.png" style="width: 150px;"></a>
+                <div class="col-md-12" style="padding-top: 50px;"><a href="/join/"><img src="../assets/img/dsc-01.png" style="width: 150px;"></a>
                     <h1 style="font-family: 'Open Sans', sans-serif;font-weight: bold;font-size: 30px;">Developer Student Clubs</h1>
                     <p class="text-center text-muted" style="font-size: 15px;margin-bottom: 0px;">Sri Manakula Vinayagar Engineering College</p>
                     <p class="text-center text-muted" style="font-size: 13px;opacity: 0.77;padding: 5px;">powered by Google Developers</p>
@@ -58,7 +64,9 @@
                 <div class="col text-center d-sm-flex flex-column justify-content-sm-center align-items-sm-center" style="padding: 20px;">
                     <h1 class="text-center" style="font-size: 30px;font-weight: bold;font-family: 'Open Sans', sans-serif;">Core Team Recuirtment 2020</h1>
                     <p class="text-center" id="guest_id" style="font-family: 'Open Sans', sans-serif;font-weight: normal;font-size: 13px;"></p><img id="success_core_apply_img" src="../assets/img/iconfinder-icon%20(8).svg" style="width: 70px;">
-                    <h1 id="success_core_apply" style="font-size: 25px;font-family: 'Open Sans', sans-serif;font-weight: bold;padding: 10px;">Applied Successfully</h1><a href="#" style="padding: 10px;">For any changes report here</a></div>
+                    <h1 id="success_core_apply" style="font-size: 25px;font-family: 'Open Sans', sans-serif;font-weight: bold;padding: 10px;">Applied Successfully</h1><a href="mailto:dscsmvec@smvec.ac.in" style="padding: 10px;">For any changes report here</a>
+                    <button class="btn btn-primary mt-3"><a href="/join/" style="padding: 10px;">Back to Home</a></button>
+                </div>
                 <div class="col-md-12 text-center d-flex justify-content-center" style="padding-right: 5px;padding-left: 5px;padding-top: 30px;">
                     <form class="text-left" id="core_form" style="max-width: 70%;">
                         <div class="form-group"><label style="font-weight: bold;">Email Address *</label><input class="form-control" type="email" id="core_email" placeholder="jaw@example.com" required="" inputmode="email"></div>
@@ -153,7 +161,7 @@
             <div class="form-group">
                 <div class="custom-control custom-radio"><input class="custom-control-input" type="radio" id="agree" for="formCheck-4" value="agree" required=""><label class="custom-control-label text-muted" for="agree" style="font-size: 13px;padding: 3px;">By applying this core team recuirtment 2020 you accept our&nbsp;<a id="openPrivacyModal" href="#">Terms and Policy</a>&nbsp;.</label></div>
             </div>
-            <div class="form-group d-flex justify-content-end align-items-center"><a class="btn btn-primary border-white learn-btn" role="button" id="core_cancel" style="background-color: #cccccc;color: rgb(255,255,255);margin-right: 15px;" href="/join/index.html">Cancel</a><a class="btn btn-primary learn-btn" role="button"
+            <div class="form-group d-flex justify-content-end align-items-center"><a class="btn btn-primary border-white learn-btn" role="button" id="core_cancel" style="background-color: #cccccc;color: rgb(255,255,255);margin-right: 15px;" href="/join/">Cancel</a><a class="btn btn-primary learn-btn" role="button"
                     id="core_apply" style="background-color: #0ea0ff;color: rgb(255,255,255);margin-right: 15px;">Apply</a></div>
             </form>
         </div>
@@ -189,46 +197,62 @@
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/js/bs-init.js"></script>
-    <!-- <script src="assets/js/firebase-config.js"></script> -->
+    <!-- <script src="../assets/js/firebase-config.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/theme.js"></script>
     
 </body>
 
-<script>
+<script>    
+window.onload = function(){
       var firebaseConfig = {
-    apiKey: "AIzaSyAlzwW1xctmeIYndKKj8JYWwBRrdWJnBR4",
-    authDomain: "smvecdsc.firebaseapp.com",
-    databaseURL: "https://smvecdsc.firebaseio.com",
-    projectId: "smvecdsc",
-    storageBucket: "smvecdsc.appspot.com",
-    messagingSenderId: "430236691127",
-    appId: "1:430236691127:web:4cdaffb5d641dae25b7b32"
+        apiKey: "AIzaSyDue8AOIYVzv2ShPzuJYV5C9rvdJxiH_HQ",
+  authDomain: "recuirtment-portal.firebaseapp.com",
+  databaseURL: "https://recuirtment-portal.firebaseio.com",
+  projectId: "recuirtment-portal",
+  storageBucket: "recuirtment-portal.appspot.com",
+  messagingSenderId: "110076146684",
+  appId: "1:110076146684:web:8b10c5cd63a724ebf3b879"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-
-     $('#core_guest_entry_submit').submit(function(e){
+  firebase.initializeApp(firebaseConfig); 
+}
+     $('#core_guest_entry_submit').submit(function(e){         
       e.preventDefault();
-    if($('#guest_entry_code').val() != "") {
-       
-            var db = firebase.database().ref("station").child("entry_code");
-            db.on("value", (snapshot) => {
+      $('#guest_entry_request').css('display','none');
+      $('#pre_loader').css('display','block');
+    if($('#guest_entry_code').val() != "") {                
+            var db = firebase.database().ref("station").child("entry_code");        
+                   
+            db.on("value", function(snapshot) {
                if($('#guest_entry_code').val() === snapshot.val()) {
                    $(".core-from-block").css("display","none");
                    $('#core_entry_portal').css('display','block');  
-                   $('#success_core_apply').css('display','none');$('#success_core_apply_img').css('display','none');                                         
+                   $('#success_core_apply').css('display','none');$('#success_core_apply_img').css('display','none'); 
+                    var checkDb = firebase.database().ref("station").child("entries");
+                    var userIdPush = checkDb.push().getKey();
+                    sessionStorage.setItem('key_guest_id',userIdPush);
+                    $('#guest_id').html('Guest Id: '+userIdPush);       
+                    $('#guest_entry_request').css('display','block');
+                    $('#pre_loader').css('display','none');                                 
                }else{
+                    $('#guest_entry_request').css('display','block');
+                    $('#pre_loader').css('display','none');      
                    alert('invalid code, try again!');
                }
+            }, function (error) {
+                    $('#guest_entry_request').css('display','block');
+                    $('#pre_loader').css('display','none');      
+            console.log("Error: " + error.code);
             });
-            var checkDb = firebase.database().ref("station").child("entries");
-            var userIdPush = checkDb.push().getKey();
-            sessionStorage.setItem('key_guest_id',userIdPush);
-            $('#guest_id').html('Guest Id: '+userIdPush);
+
+            
+            
         
     }else{
+        $('#guest_entry_request').css('display','block');
+        $('#pre_loader').css('display','none');      
         alert('code is empty');
     }
   });
@@ -351,7 +375,7 @@
 }
 
 $('#core_cancel').click(function(){
-    window.location.replace("/join/index.html");
+    window.location.replace("/join/");
     sessionStorage.setItem('key_guest_id','');
 });
 </script>

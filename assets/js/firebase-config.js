@@ -1,12 +1,12 @@
 // Your web app's Firebase configuration
-    var firebaseConfig = {
+var firebaseConfig = {
     apiKey: "AIzaSyDue8AOIYVzv2ShPzuJYV5C9rvdJxiH_HQ",
-    authDomain: "recuirtment-portal.firebaseapp.com",
-    databaseURL: "https://recuirtment-portal.firebaseio.com",
-    projectId: "recuirtment-portal",
-    storageBucket: "recuirtment-portal.appspot.com",
-    messagingSenderId: "110076146684",
-    appId: "1:110076146684:web:8b10c5cd63a724ebf3b879"
+  authDomain: "recuirtment-portal.firebaseapp.com",
+  databaseURL: "https://recuirtment-portal.firebaseio.com",
+  projectId: "recuirtment-portal",
+  storageBucket: "recuirtment-portal.appspot.com",
+  messagingSenderId: "110076146684",
+  appId: "1:110076146684:web:8b10c5cd63a724ebf3b879"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
@@ -140,13 +140,25 @@
       if(coreCode!=""&&corePass!=""){
           firebase.auth().signInWithEmailAndPassword(coreCode, corePass).then(function(){
               $('.login-clean').css('display','none');
-      $('#core_logged_in').css('display','flex');
-          })            .catch(function(error){
+              $('#entries_block').css('display','block');
+              $('#entries_sub_block').html('');            
+      //     get entry data
+          var rootRef = firebase.database().ref("station").child("entries");
+          rootRef.on("value",function(snapshot){
+              var html='';
+              snapshot.forEach(function(childNodes){
+                 html += '<div id="'+childNodes.val().guestid+'" class="card shadow-sm" id="entry_card" onclick="openDetails(this)"><div class="card-body text-center"><img class="p-3" height="100" width="100" src="../assets/img/iconfinder-icon%20(9).svg"/><h4 class="card-title" style="font-size: 15px;font-weight: bold;font-family: Lato, sans-serif;">'+childNodes.val().name+'</h4><h4 class="text-muted card-title" style="font-size: 15px;font-weight: bold;font-family: Lato, sans-serif;">'+childNodes.val().regnum+'</h4><p class="text-muted" style="font-size: 15px;">'+childNodes.val().interest+'</p><span class="badge badge-primary" id="depart_badge">'+childNodes.val().department+'</span><span class="badge badge-primary" id="year_badge">'+childNodes.val().year+'</span><span class="badge badge-danger pill" id="status_badge">'+childNodes.val().status+'</span></div></div>';
+              });
+              $('#entries_sub_block').append(html);
+          });  
+          })            
+          .catch(function(error){
               
              if(error){
                  alert(error.message);
               }  
-        });}else{
+        });
+        }else{
                   alert('empty fields');
               }
       
@@ -163,39 +175,31 @@ $('#core_signout').click(()=>{
    });
 });
 
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {      
-            $('.login-clean').css('display','none');
-            $('#core_logged_in').css('display','flex');
-            $('#core_userid').html(user.uid);
-            $('#welcome_core').html('Welcome, '+user.email.split('@')[0]);
-        }
+    // firebase.auth().onAuthStateChanged(function(user) {
+    //     if (user) {      
+    //         $('.login-clean').css('display','none');
+    //         $('#core_logged_in').css('display','flex');
+    //         $('#core_userid').html(user.uid);
+    //         $('#welcome_core').html('Welcome, '+user.email.split('@')[0]);
+    //         $('#entries_sub_block').html('');
+    //   //     get entry data
+    //       var rootRef = firebase.database().ref("station").child("entries");
+    //       rootRef.on("value",function(snapshot){
+    //           var html='';
+    //           snapshot.forEach(function(childNodes){
+    //              html += '<div id="'+childNodes.val().guestid+'" class="card shadow-sm" id="entry_card" onclick="openDetails(this)"><div class="card-body text-center"><img class="p-3" height="100" width="100" src="../assets/img/iconfinder-icon%20(9).svg"/><h4 class="card-title" style="font-size: 15px;font-weight: bold;font-family: Lato, sans-serif;">'+childNodes.val().name+'</h4><h4 class="text-muted card-title" style="font-size: 15px;font-weight: bold;font-family: Lato, sans-serif;">'+childNodes.val().regnum+'</h4><p class="text-muted" style="font-size: 15px;">'+childNodes.val().interest+'</p><span class="badge badge-primary" id="depart_badge">'+childNodes.val().department+'</span><span class="badge badge-primary" id="year_badge">'+childNodes.val().year+'</span><span class="badge badge-danger pill" id="status_badge">'+childNodes.val().status+'</span></div></div>';
+    //           });
+    //           $('#entries_sub_block').append(html);
+    //       });    
+    //     }else{
+    //         $('#entries_sub_block').html('');
+    //     }
           
-              $('#entries_sub_block').html('');
-      //     get entry data
-          var rootRef = firebase.database().ref("station").child("entries");
-          rootRef.on("value",function(snapshot){
-              var html='';
-              snapshot.forEach(function(childNodes){
-                 html += '<div id="'+childNodes.val().guestid+'" class="card shadow-sm" id="entry_card" onclick="openDetails(this)"><div class="card-body text-center"><img class="p-3" height="100" width="100" src="../assets/img/iconfinder-icon%20(9).svg"/><h4 class="card-title" style="font-size: 15px;font-weight: bold;font-family: Lato, sans-serif;">'+childNodes.val().name+'</h4><h4 class="text-muted card-title" style="font-size: 15px;font-weight: bold;font-family: Lato, sans-serif;">'+childNodes.val().regnum+'</h4><p class="text-muted" style="font-size: 15px;">'+childNodes.val().interest+'</p><span class="badge badge-primary" id="depart_badge">'+childNodes.val().department+'</span><span class="badge badge-primary" id="year_badge">'+childNodes.val().year+'</span><span class="badge badge-danger pill" id="status_badge">'+childNodes.val().status+'</span></div></div>';
-              });
-              $('#entries_sub_block').append(html);
-          });    
+              
           
-                       }); 
+    //                    }); 
       
-window.onload = function(){
-    $('#entries_sub_block').html('');
-      //     get entry data
-          var rootRef = firebase.database().ref("station").child("entries");
-          rootRef.on("value",function(snapshot){
-              var html='';
-              snapshot.forEach(function(childNodes){
-                 html += '<div id="'+childNodes.val().guestid+'" class="card shadow-sm" id="entry_card" onclick="openDetails(this)"><div class="card-body text-center"><img class="p-3" height="100" width="100" src="../assets/img/iconfinder-icon%20(9).svg"/><h4 class="card-title" style="font-size: 15px;font-weight: bold;font-family: Lato, sans-serif;">'+childNodes.val().name+'</h4><h4 class="text-muted card-title" style="font-size: 15px;font-weight: bold;font-family: Lato, sans-serif;">'+childNodes.val().regnum+'</h4><p class="text-muted" style="font-size: 15px;">'+childNodes.val().interest+'</p><span class="badge badge-primary" id="depart_badge">'+childNodes.val().department+'</span><span class="badge badge-primary" id="year_badge">'+childNodes.val().year+'</span><span class="badge badge-danger pill" id="status_badge">'+childNodes.val().status+'</span></div></div>';
-              });
-              $('#entries_sub_block').append(html);
-          });    
-}
+
 
 
 $('#entries_applied').click(()=>{

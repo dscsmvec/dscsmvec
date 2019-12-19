@@ -27,7 +27,11 @@
 <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
 </head>
-
+<style>   
+    #core_signout{
+display: none;
+    }
+</style>
 <body>
     <div id="core_login_portal" class="login-clean">
         <form id="core_login_form" method="post" style="padding: 40px;">
@@ -35,7 +39,7 @@
             <div class="illustration"><img src="../assets/img/dsc-01.png" style="width: 150px;"></div>
             <div class="form-group"><input class="form-control" type="text" id="team_code" required="" placeholder="Team Code"></div>
             <div class="form-group"><input class="form-control" type="password" id="team_password" name="password" placeholder="Password"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block" id="core_login_request" type="submit" style="background-color: #2784fb;">Log In</button></div><a class="forgot" href="/join/index.html">Return to Home</a></form>
+            <div class="form-group"><button class="btn btn-primary btn-block" id="core_login_request" type="submit" style="background-color: #2784fb;">Log In</button></div><a class="forgot" href="/join/">Return to Home</a></form>
     </div>
     <div id="entries_block">
         <div class="container">
@@ -123,7 +127,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col"><a id="core_signout" href="#">signOut</a></div>
+                <div class="col p-3"><button class="btn btn-primary" id="core_signout">signOut</button></div>
             </div>
         </div>
     </div>
@@ -137,3 +141,27 @@
 </body>
 
 </html>
+<script>
+    window.onload = function(){
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {      
+            $('#entires_block').css('display','block');
+            $('#core_signout').css('display','block');
+            $('.login-clean').css('display','none');            
+            $('#entires_block').css('display','block');
+            $('#core_userid').html(user.uid);
+            $('#welcome_core').html('Welcome, '+user.email.split('@')[0]);
+            $('#entries_sub_block').html('');            
+      //     get entry data
+          var rootRef = firebase.database().ref("station").child("entries");
+          rootRef.on("value",function(snapshot){
+              var html='';
+              snapshot.forEach(function(childNodes){
+                 html += '<div id="'+childNodes.val().guestid+'" class="card shadow-sm" id="entry_card" onclick="openDetails(this)"><div class="card-body text-center"><img class="p-3" height="100" width="100" src="../assets/img/iconfinder-icon%20(9).svg"/><h4 class="card-title" style="font-size: 15px;font-weight: bold;font-family: Lato, sans-serif;">'+childNodes.val().name+'</h4><h4 class="text-muted card-title" style="font-size: 15px;font-weight: bold;font-family: Lato, sans-serif;">'+childNodes.val().regnum+'</h4><p class="text-muted" style="font-size: 15px;">'+childNodes.val().interest+'</p><span class="badge badge-primary" id="depart_badge">'+childNodes.val().department+'</span><span class="badge badge-primary" id="year_badge">'+childNodes.val().year+'</span><span class="badge badge-danger pill" id="status_badge">'+childNodes.val().status+'</span></div></div>';
+              });
+              $('#entries_sub_block').append(html);
+          });  
+        }        
+});
+}
+</script>
