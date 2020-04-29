@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
@@ -22,7 +23,24 @@
     <link rel="stylesheet" href="assets/css/untitled-1.css">
     <link rel="stylesheet" href="assets/css/untitled.css">
 </head>
+<style>
+    .ans{
+        max-height: 100vh;
+    }
+    @media only screen and (max-width: 600px) {
+  .animat {
+      display: none;
+  }
+  .ani {
+      padding: 10px;
+  }
+  .ans{
+      max-height: 155vh;
+  }
 
+}
+
+</style>
 <body>
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white portfolio-navbar">
         <div class="container"><a class="navbar-brand logo" href="/" style="color: #191921;font-weight: normal;font-size: 18px;"><img src="assets/img/dsc-01.png" style="width: 50px;margin-right: 10px;margin-bottom: 3px;">DSC SMVEC<br></a><button data-toggle="collapse" class="navbar-toggler"
@@ -60,18 +78,61 @@
     <div style="padding: 20px;max-height: 60%;">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 text-center">
-                        <lottie-player
-                            src="https://assets7.lottiefiles.com/datafiles/nEcNvHOihy2iUQL/data.json"  background="transparent"  speed="0.7"  style="width: 250px; height: 250px;"  loop  autoplay >
-                        </lottie-player>
+                <div class="col-md-6 text-center d-sm-flex justify-content-sm-center align-items-sm-center">                    
+                    <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_fGAxNE.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="text-center" style="font-size: 25px;font-family: 'Open Sans', sans-serif;font-weight: bold;padding: 5px;">Why are you here?</h1>
-                    <p class="text-center text-muted" style="padding: 20px;">We think slightly out of the box, we believe that &nbsp;a club would <br>entirely change the students environment into a peacefull and more <br>interesting one, we conduct events and workshops to gear up them.</p>
+                <div class="col-md-6 text-center text-center d-sm-flex flex-column justify-content-sm-center align-items-sm-center">                    
+                    <img src="assets/img/zillalogo-01.png" style="height:150px;"/>
+                    <h1 class="text-center" style="font-size: 25px;font-family: 'Open Sans', sans-serif;font-weight: bold;padding: 2px;">offers free certified courses</h1>                    
+                    <p class="text-center text-muted" style="padding: 5px;">Have a look into it use these courses to train yourselves, they are register free courses where you can just watch a video and attend quizes.</p>
+                    <button class="btn btn-primary learn-btn btn-sm" type="button" id="visit_zilla" style="background-color: #0ea0ff;">Enroll Course</button>
                 </div>
-            </div>
+            </div>            
+        </div>
+    </div><br/>
+    <div class="mt-4 text-center ans" style="padding: 20px;background-color: black;">
+        <div class="container">                        
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-3 animat">
+                    <lottie-player src="assets/img/celb.json"  background="transparent"  speed="1"  style="width: 150px; height: 150px;"  loop autoplay></lottie-player>
+                </div>
+                <div class="col-6 p-3">
+                    <p class="h4 font-weight-bold text-white w-100" style="font-family: 'Montserrat', sans-serif;">THANKS FOR YOUR SUPPORT</p>
+                    <p class="h6 font-weight-bold text-white">A Year of constant support <i class="fa fa-heart" style="padding-bottom: 3px;color:#f0174b;"></i> 2019 - 2020</p>
+    
+                    <div class="row p-2">
+                        <div class="col ani">
+                            <img style="border-radius: 50%;" data-toggle="tooltip" title="DSC Lead" src="assets/img/david.jpg" height="90px"/>
+                        </div>
+                        <div class="col ani">
+                            <img style="border-radius: 50%;" data-toggle="tooltip" title="Technical Lead" src="assets/img/madhavan.jpg" height="90px"/>
+                        </div>
+                        <div class="col ani">
+                            <img style="border-radius: 50%;" src="assets/img/jaw.jpg" data-toggle="tooltip" title="Technical Lead" height="90px"/>
+                        </div>
+                        <div class="col ani">
+                            <img style="border-radius: 50%;" src="assets/img/hasif.jpg" data-toggle="tooltip" title="Technical Lead" height="90px"/>
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col ani">
+                            <img style="border-radius: 50%;" data-toggle="tooltip" title="Technical Lead" src="assets/img/ganesh.jpg" height="90px"/>
+                        </div>
+                        <div class="col ani">
+                            <img style="border-radius: 50%;" data-toggle="tooltip" title="Creative Lead" src="assets/img/nishaant.jpg" height="90px"/>
+                        </div>
+                        <div class="col ani">
+                            <img style="border-radius: 50%;" data-toggle="tooltip" title="Creative Member" src="assets/img/fahad.jpg" height="90px"/>
+                        </div>
+                        <div class="col ani">
+                            <img style="border-radius: 50%;" data-toggle="tooltip" title="Creative Member" src="assets/img/vicky.jpg" height="90px"/>
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-3 animat">
+                    <lottie-player src="assets/img/celb.json"  background="transparent"  speed="1"  style="width: 150px; height: 150px;"  loop autoplay></lottie-player>
+                </div>                             
+            </div>                    
         </div>
     </div>
     <div class="d-flex justify-content-center align-items-center" style="max-height: 100%;min-height: 716px;">
@@ -200,12 +261,27 @@
                 <div class="col-md-12 d-flex flex-column justify-content-center align-items-center" style="padding-top: 20px;">
                     <hr style="max-width: 100%;width: 50%;">
                     <p><a href="https://prakashjaw.bss.design"><img src="https://img.shields.io/badge/developer-prakashjaw-salmon.svg?style=flat" alt="author"></a></p>
-                    <p class="text-center text-muted d-flex justify-content-center align-items-end" style="font-size: 12px;margin-bottom: 6px;">Made with &nbsp;<i class="fa fa-heart" style="padding-bottom: 3px;color: #f0174b;"></i>&nbsp; in Puducherry</p>
+                    <p class="text-center text-muted d-flex justify-content-center align-items-end" style="font-size: 12px;margin-bottom: 6px;">Made with &nbsp;<i class="fa fa-heart" style="padding-bottom: 3px;color: #f0174b;"></i>&nbsp; by DSCSMVEC 2019</p>
                     <p class="text-center text-muted d-flex justify-content-center align-items-end" style="font-size: 14px;">Copyright&nbsp;<i class="fa fa-copyright" style="padding-bottom: 3px;"></i>&nbsp; 2019. All rights are reserved</p>
+                    <p class="text-center text-muted copyright" style="font-size: 14px;">hosted with <i class="fa fa-fire" style="color: #ff7402;"></i>&nbsp;<a href="https://github.com" class="github">GitHub</a></p>                    
                 </div>
             </div>
         </div>
     </div>
+    <style>
+        
+
+
+.github{
+  color: gray;
+  font-weight: 800;
+}
+
+.github:hover{
+  text-decoration: none;
+  color: gray;
+}
+    </style>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>    

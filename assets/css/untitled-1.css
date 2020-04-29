@@ -41,3 +41,12 @@ lottie-player {
   /*cursor: pointer;*/
 }
 
+.animtion-thanks {
+  position: absolute;  
+  animation: shrink 1s infinite;
+}
+
+@keyframes shrink {
+   0%{ transform: scale(0.9); };
+   100%{transform: scale(1);}
+}

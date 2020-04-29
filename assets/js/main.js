@@ -1,5 +1,8 @@
 $('#learn_more').click(function(){
   window.open('https://developers.google.com/community/dsc');    
+}); 
+$('#visit_zilla').click(function(){
+  window.open('https://smveczilla.in/courses.html');    
 });  
 $('#openPrivacyModal').click(function(){
    $('#privacy_modal').modal('show');
