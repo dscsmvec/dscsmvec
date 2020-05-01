@@ -3,6 +3,9 @@ $('#learn_more').click(function(){
 }); 
 $('#visit_zilla').click(function(){
   window.open('https://smveczilla.in/courses.html');    
+}); 
+$('#visit_live').click(function(){
+  window.open('https://smveczilla.in/courses.html');    
 });  
 $('#openPrivacyModal').click(function(){
    $('#privacy_modal').modal('show');

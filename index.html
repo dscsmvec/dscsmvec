@@ -27,6 +27,9 @@
     .ans{
         max-height: 100vh;
     }
+    .main_first {
+        margin-top: 130px;
+    }
     @media only screen and (max-width: 600px) {
   .animat {
       display: none;
@@ -37,8 +40,21 @@
   .ans{
       max-height: 155vh;
   }
+        .main_first {
+        margin-top: 50px;
+    }
 
 }
+    
+    @media only screen and (max-width: 400px) {
+        .ans{
+            max-height: 200vh;
+        }
+        
+        .main_first {
+        margin-top: 50px;
+    }
+    }
 
 </style>
 <body>
@@ -59,7 +75,29 @@
             </div>
         </div>
     </nav>
-    <div style="padding: 30px;max-height: 100%;min-height: 580px;margin-top: 130px;">
+    <div style="padding: 30px;max-height: 100%;min-height: 580px;" class="main_first">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" style="padding: 50px;margin-top: 60px;">
+                    <h1 style="font-size: 30px;font-family: 'Open Sans', sans-serif;font-weight: bold;">Demystifying Of Web</h1>
+                    <p style="font-size: 13px;" class="text-muted font-weight-bold"><span class="live">
+                        <svg class="live_circle" height="20" width="20">
+                            <circle cx="10" cy="10" r="5" stroke="none" fill="red" />
+                        </svg> Live Event
+                    </span>                    
+                    </p>                                   
+                    <p class="text-muted">Watch the live session on You Tube of Breaking Down the basics of Web</p>   
+                    <button class="btn btn-primary learn-btn btn-sm disabled" type="button" id="visit_live" style="background-color: #0ea0ff;">Available on May 02 6:00 pm</button>                 
+                </div>
+                <div class="col-md-6 text-center d-sm-flex justify-content-sm-center align-items-sm-center"><script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                    <lottie-player
+                    src="https://assets9.lottiefiles.com/packages/lf20_znCQsa.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay >
+                </lottie-player>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding: 30px;max-height: 100%;min-height: 580px;" class="main_first">
         <div class="container">
             <div class="row">
                 <div class="col-md-6" style="padding: 50px;margin-top: 60px;">
@@ -207,10 +245,10 @@
                 <div class="col-md-6">
                     <div class="card shadow-sm">
                         <div class="card-body text-left d-flex justify-content-center align-items-center">
-                            <div class="col d-flex justify-content-center align-items-center"><img src="assets/img/flutter-logo.svg" style="width: 70px;"></div>
+                            <div class="col d-flex justify-content-center align-items-center"><img src="assets/img/interface.svg" style="width: 70px;"></div>
                             <div class="col">
-                                <h4 class="text-left" style="font-weight: bold;">Flutter Interact</h4>
-                                <h6 class="text-left text-muted mb-2">mobile app development</h6><a class="btn btn-outline-primary btn-sm learn-btn" role="button" href="flutter.html">Know More</a></div>
+                                <h5 class="text-left" style="font-weight: bold;">Demystifying Of Web</h5>
+                                <h6 class="text-left text-muted mb-2">web development</h6><a class="btn btn-outline-primary btn-sm learn-btn" role="button" href="web.html">Know More</a></div>
                         </div>
                     </div>
                 </div>
@@ -219,8 +257,8 @@
                         <div class="card-body text-left d-flex justify-content-center align-items-center">
                             <div class="col d-flex justify-content-center align-items-center"><img src="assets/img/super_cloud.png" style="width: 80px;"></div>
                             <div class="col">
-                                <h4 class="text-left" style="font-weight: bold;">GCP Crash Course</h4>
-                                <h6 class="text-left text-muted mb-2">cloud computing</h6><a class="btn btn-outline-primary btn-sm" role="button" href="gcp.html">Know More</a></div>
+                                <h4 class="text-left" style="font-weight: bold;">Flutter Interact</h4>
+                                <h6 class="text-left text-muted mb-2">mobile app development</h6><a class="btn btn-outline-primary btn-sm learn-btn" role="button" href="flutter.html">Know More</a></div>
                         </div>
                     </div>
                 </div>

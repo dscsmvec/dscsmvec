@@ -22,6 +22,17 @@ lottie-player {
   /*cursor: pointer;*/
 }
 
+
+.live_circle{
+  animation: blink 1.2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 0; };
+  100% { opacity: 1; }
+}
+
+
 .card-group > .card: hover {
   background: blue;
 }
@@ -49,4 +60,19 @@ lottie-player {
 @keyframes shrink {
    0%{ transform: scale(0.9); };
    100%{transform: scale(1);}
+}
+
+.webi{
+  padding: 20px;height: 200vh;
+}
+
+@media only screen and (max-width: 600px) {
+  
+.webi{
+  padding: 20px;height: 250vh;
+  margin-bottom: 20px;
+}
+.webi img {
+  height: 250px;
+}
 }
