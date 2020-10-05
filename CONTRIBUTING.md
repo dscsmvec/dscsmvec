@@ -2,4 +2,4 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 Contributors:
 
-[davidportlouis](https://github.com/davidportlouis)
+[David Port Louis](https://github.com/davidportlouis)
