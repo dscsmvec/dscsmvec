@@ -1,5 +1,5 @@
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specfication. Contributions of any kind welcome!
-#Hacktoberfest 2021 PR's are welcome
+#Hacktoberfest 2022 PR's are welcome
 ### Do not spam with pull requests
 
 ## Contributors
